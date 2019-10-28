@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Cadastro Pessoa Fisica
+{% endblock %}
+    
+{% block body %}
+
+<div class="display-4">Novo Cadastro Pessoa Fisica</div> <br>
+    <form action="{{ path('save_pf') }}" method="POST" class="form-group">
+        <p>
+            <label for="nome">Nome: </label><br>
+            <input type="text" name="nome" class="form-control">
+        </p>
+
+        <p>
+            <label for="cpf">CPF</label><br>
+            <input type="number" name="cpf" maxlength="11" class="form-control">
+        </p>
+
+        <p>
+            <label for="email">Email</label><br>
+            <input type="text" name="email" class="form-control">
+        </p>
+
+        <input type="submit" value="Cadastrar" class="btn btn-success">
+    </form>
+
+{% endblock %}

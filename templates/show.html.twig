@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registro{% endblock %}
+
+{% block body %}
+    <h1>Registro</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Nome</th>
+                <td>{{ usuario.nome }}</td>
+            </tr>
+            <tr>
+                <th>CPF</th>
+                <td>{{ usuario.cpf }}</td>
+            </tr>
+            <tr>
+                <th>Razão social</th>
+                <td>{{ usuario.rSocial }}</td>
+            </tr>
+            <tr>
+                <th>CNPJ</th>
+                <td>{{ usuario.cnpj }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ usuario.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('usuario_index') }}" class="btn btn-warning">Voltar</a>
+
+    <a href="{{ path('edit', {'id': usuario.id}) }}" class="btn btn-primary">Editar</a>
+    {{ include('_delete_form.html.twig') }}
+{% endblock %}

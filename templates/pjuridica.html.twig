@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Cadastro Pessoa Juridica
+{% endblock %}
+    
+{% block body %}
+
+<div class="display-4">Novo Cadastro Pessoa Juridica</div> <br>
+
+    <form action="{{ path('save_pj') }}" method="POST" class="form-group">
+        <p>
+            <label for="r_social">Razão Social: </label><br>
+            <input type="text" name="r_social" class="form-control">
+        </p>
+
+        <p>
+            <label for="cnpj">CNPJ</label><br>
+            <input type="number" name="cnpj" maxlength="14" class="form-control">
+        </p>
+
+        <p>
+            <label for="email">Email</label><br>
+            <input type="text" name="email" class="form-control">
+        </p>
+
+        <input type="submit" value="Cadastrar" class="btn btn-success">
+    </form>
+
+{% endblock %}

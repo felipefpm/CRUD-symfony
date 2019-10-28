@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registros{% endblock %}
+
+{% block body %}
+    <p class="display-4">Registros</p>
+    <br>
+    <div>
+        <p><h5>Pessoa Fisica</h5></p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th width="300px">Nome</th>
+                    <th width="300px">CPF</th>
+                    <th width="300px">Email</th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for usuario in usuarios %}
+                    <tr>
+                        <td>{{ usuario.nome }}</td>
+                        <td>{{ usuario.cpf }}</td>
+                        <td>{{ usuario.email }}</td>
+                        <td>
+                            <a href="{{ path('show', {'id': usuario.id}) }}">Ver</a> | 
+                            <a href="{{ path('edit', {'id': usuario.id}) }}">Editar</a>
+                        </td>
+                    </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="8">Sem registros!</td>
+                        </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <hr/>
+    <br>
+    <div>
+        <p><h5>Pessoa Juridica</h5></p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th width="300px">Razão Social</th>
+                    <th width="300px">CNPJ</th>
+                    <th width="300px">Email</th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for usuario in usuarios %}
+                    <tr>
+                        <td>{{ usuario.rSocial }}</td>
+                        <td>{{ usuario.cnpj }}</td>
+                        <td>{{ usuario.email }}</td>
+                        <td>
+                            <a href="{{ path('show', {'id': usuario.id}) }}">Ver</a> | 
+                            <a href="{{ path('edit', {'id': usuario.id}) }}">Editar</a>
+                        </td>
+                    </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="8">Sem registros!</td>
+                        </tr>
+                    {% endfor %}
+            </tbody>
+        </table>
+     </div>
+
+<a href="{{ path('selecao') }}" class="btn btn-primary">Novo Registro</a>
+<br><br><br><br>
+{% endblock %}

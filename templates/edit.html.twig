@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editar{% endblock %}
+
+{% block body %}
+    <h1>Editar Registro</h1>
+
+    {{ include('_form.html.twig', {'button_label': 'Salvar'}) }}
+    
+    <a href="{{ path('usuario_index') }}" class="btn btn-warning">Voltar</a>
+
+    {{ include('_delete_form.html.twig') }}
+{% endblock %}
